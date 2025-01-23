@@ -1,8 +1,20 @@
 import json
 from datetime import datetime
+import os
+import zipfile
+
+# Define paths
+input_path = "D:/python/watch-history.json"
+output_dir = "D:/python/"
+output_file = os.path.join(output_dir, "history")
+zip_path = os.path.join(output_dir, "output.zip")
+stores_dir = os.path.join(output_dir, "stores")
+
+# Create the "stores" subdirectory if it doesn't exist
+os.makedirs(stores_dir, exist_ok=True)
 
 # Load the JSON file
-with open('d:/python/watch-history.json', 'r', encoding='utf-8') as file:
+with open(input_path, 'r', encoding='utf-8') as file:
     data = json.load(file)
 
 # Convert each entry
@@ -36,13 +48,31 @@ for entry in data:
 
         title = entry["title"]
         # Assume the video was fully watched (set duration to a placeholder, e.g., 600 seconds)
-        duration = 600  # You can adjust this value as needed
+        duration = 60000  # You can adjust this value as needed
         # Format the entry as a single string
         entry_string = f"{video_url}|||{timestamp}|||{duration}|||{title}"
         output.append(entry_string)
 
-# Save the output as a JSON array
-with open('d:/python/history', 'w', encoding='utf-8') as file:
-    json.dump(output, file, indent=4)  # Use indent=4 for pretty-printing (optional)
+# Save the output as a JSON array in the "stores" subdirectory
+history_path = os.path.join(stores_dir, "history")
+with open(history_path, 'w', encoding='utf-8') as file:
+    json.dump(output, file)
 
-print("Conversion complete! Check 'converted-history.json'.")
+# Create the "exportinfo" file in the root of the zip
+exportinfo_path = os.path.join(output_dir, "exportinfo")
+with open(exportinfo_path, 'w', encoding='utf-8') as file:
+    file.write('{"version":"1"}')
+
+# Create the zip file
+with zipfile.ZipFile(zip_path, 'w') as zipf:
+    # Add the "history" file from the "stores" subdirectory
+    zipf.write(history_path, arcname=os.path.join("stores", "history"))
+    # Add the "exportinfo" file to the root of the zip
+    zipf.write(exportinfo_path, arcname="exportinfo")
+
+# Clean up temporary files
+os.remove(history_path)
+os.remove(exportinfo_path)
+os.rmdir(stores_dir)
+
+print(f"Conversion complete! Zip file created at {zip_path}.")
