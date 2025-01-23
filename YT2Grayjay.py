@@ -6,8 +6,11 @@ import zipfile
 # Define paths
 input_path = "D:/python/watch-history.json"
 output_dir = "D:/python/"
-output_file = os.path.join(output_dir, "history")
 zip_path = os.path.join(output_dir, "output.zip")
+
+
+# leave that be
+output_file = os.path.join(output_dir, "history")
 stores_dir = os.path.join(output_dir, "stores")
 
 # Create the "stores" subdirectory if it doesn't exist
