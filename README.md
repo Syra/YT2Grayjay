@@ -9,4 +9,5 @@ adjust path in the script if using a different one.
 run it.
 
 download a fresh grayjay export
-rename converteed-history.json to history - inject it into grayjays export file. reimport export file.
+inject freshly generated history into the file under stores.
+reimport it into grayjay - you can skip all imports other than history
