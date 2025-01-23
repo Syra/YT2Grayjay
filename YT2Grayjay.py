@@ -42,7 +42,7 @@ for entry in data:
         output.append(entry_string)
 
 # Save the output as a JSON array
-with open('d:/python/converted-history.json', 'w', encoding='utf-8') as file:
+with open('d:/python/history', 'w', encoding='utf-8') as file:
     json.dump(output, file, indent=4)  # Use indent=4 for pretty-printing (optional)
 
 print("Conversion complete! Check 'converted-history.json'.")
