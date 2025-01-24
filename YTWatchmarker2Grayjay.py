@@ -4,10 +4,10 @@ import os
 import zipfile
 
 # Define paths
-input_path = "D:/python/export.txt"  # Path to the base64-encoded file
+input_path = "D:/python/watchmarker.database"  # Path to the base64-encoded file
 output_dir = "D:/python/"
 
-zip_path = os.path.join(output_dir, "output.zip")
+zip_path = os.path.join(output_dir, "grayjay.zip")
 
 
 #leave that alone
