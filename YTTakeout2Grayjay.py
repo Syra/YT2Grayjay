@@ -6,7 +6,7 @@ import zipfile
 # Define paths
 input_path = "D:/python/watch-history.json"
 output_dir = "D:/python/"
-zip_path = os.path.join(output_dir, "output.zip")
+zip_path = os.path.join(output_dir, "grayjay.zip")
 
 
 # leave that be
