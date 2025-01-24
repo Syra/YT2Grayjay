@@ -1,5 +1,10 @@
 # YT2Grayjay
-Simple Script to convert youtube History to grayjay history
+Simple Scripts to convert youtube History to grayjay history
+
+We have now 2 of these. 
+YTTakeout2Grayjay converts a Google Takeoutfile
+YTWatchmarker2Grayjay converts a exported Watchmarker DB 
+What is Watchmarker? - https://github.com/sniklaus/youtube-watchmarker?tab=readme-ov-file
 
 ##Requirements
 You need python and a takeout of your youtube history with history set to json format.
@@ -7,12 +12,21 @@ You need python and a takeout of your youtube history with history set to json f
 
 ## Howto
 Download the py script
+
+### YTTakeout2Grayjay
 extract watch.history.json from takeoutzip to working directory (in this example we use d:\python as our working directory)
 adjust path in the script if using a different one.
 
 run it.
 
-upload output.zip to your phone
+### YTWatchmarker2Grayjay
+export the Databasefile (its usually named date.database) renameit to watchmaker.database 
+and put it into the working directory (same as with the other script)
+run it
+
+
+### To Grayjay
+upload grayjay.zip to your phone
 import "from grayjay export"
 skip everything EXCEPT "import stores - yes, import history - yes"
 
