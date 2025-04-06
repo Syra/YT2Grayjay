@@ -8,6 +8,9 @@ YTWatchmarker2Grayjay converts a exported Watchmarker DB
 FTPlay2Grayjay.py converts a freetube Playlists.db 
 What is Watchmarker? - https://github.com/sniklaus/youtube-watchmarker?tab=readme-ov-file
 
+Another Project does make a full import for Freetube, you may wanna check that one out too.
+https://github.com/sixthkrum/newpipe-to-grayjay-export
+
 ##Requirements
 You need python and a takeout of your youtube history with history set to json format.
 
