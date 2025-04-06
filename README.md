@@ -1,6 +1,6 @@
 # YT2Grayjay
 Simple Scripts to convert youtube History to grayjay history
-Update: Now added a Playlist conversion from Freetube to Grayjay. ZY is not palnned (use the plugin for that)
+Update: Now added a Playlist conversion from Freetube to Grayjay. YT is not palnned (use the plugin for that)
 
 We have now 2 of these. 
 YTTakeout2Grayjay converts a Google Takeoutfile
