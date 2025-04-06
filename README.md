@@ -2,11 +2,12 @@
 Simple Scripts to convert youtube History to grayjay history
 Update: Now added a Playlist conversion from Freetube to Grayjay. YT is not palnned (use the plugin for that)
 
-We have now 2 of these. 
-YTTakeout2Grayjay converts a Google Takeoutfile
-YTWatchmarker2Grayjay converts a exported Watchmarker DB 
-FTPlay2Grayjay.py converts a freetube Playlists.db 
-What is Watchmarker? - https://github.com/sniklaus/youtube-watchmarker?tab=readme-ov-file
+We have now 3 of these.  
+YTTakeout2Grayjay converts a Google Takeoutfile  
+YTWatchmarker2Grayjay converts a exported Watchmarker DB   
+FTPlay2Grayjay.py converts a freetube Playlists.db   
+
+What is Watchmarker? - https://github.com/sniklaus/youtube-watchmarker?tab=readme-ov-file  
 
 Another Project does make a full import for Freetube, you may wanna check that one out too.
 https://github.com/sixthkrum/newpipe-to-grayjay-export
