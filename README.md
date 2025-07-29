@@ -40,6 +40,15 @@ upload grayjay.zip to your phone
 import "from grayjay export"
 skip everything EXCEPT "import stores - yes, import history - yes"
 
+### YTWatchmarker2Takeout
+Converts YouTube Watchmarker database export to Google Takeout JSON format.
+
+Export your Watchmarker database file (usually named `DATE.database`), rename it to `watchmarker.database` and put it in the working directory.
+
+Run the script - output will be saved as `watchmarker_takeout.json`.
+
+**Note:** Timestamps in the output don't represent actual watch times, unlike genuine YouTube Takeout files.
+
 ## Disclaimer
 Warning if you have a lot of history set your screentime timeout to max so it doesnt go to sleep during import
 it can take a minute
