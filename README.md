@@ -40,7 +40,7 @@ upload grayjay.zip to your phone
 import "from grayjay export"
 skip everything EXCEPT "import stores - yes, import history - yes"
 
-### YTWatchmarker2Takeout
+### YTWatchmarker2YTTakeout
 Converts YouTube Watchmarker database export to Google Takeout JSON format.
 
 Export your Watchmarker database file (usually named `DATE.database`), rename it to `watchmarker.database` and put it in the working directory.
