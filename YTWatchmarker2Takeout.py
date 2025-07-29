@@ -1,5 +1,6 @@
 import base64
 import json
+import os
 from datetime import datetime, timezone
 
 class TakeoutEntry:
@@ -10,6 +11,16 @@ class TakeoutEntry:
         self.time = datetime.fromtimestamp(time, tz=timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3] + 'Z'
         self.products = ["YouTube"]
         self.activityControls = ["YouTube watch history"]
+    
+    def to_dict(self):
+        return {
+            "header": self.header,
+            "title": self.title,
+            "titleUrl": self.titleUrl,
+            "time": self.time,
+            "products": self.products,
+            "activityControls": self.activityControls
+        }
 
 
 def convert(filename):
@@ -30,4 +41,26 @@ def convert(filename):
             output.append(TE)
 
     return output
+
+
+if __name__ == "__main__":
+    input_file = "watchmarker.database"
+    
+    # Check if input file exists
+    if not os.path.exists(input_file):
+        print(f"Error: Input file '{input_file}' not found.")
+        print("Please make sure the watchmarker.database file is in the current directory.")
+        exit(1)
+    
+    # Convert watchmarker.database file
+    result = convert(input_file)
+    
+    # Convert TakeoutEntry objects to dictionaries for JSON serialization
+    output_data = [entry.to_dict() for entry in result]
+    
+    # Save to watchmarker_takeout.json
+    with open("watchmarker_takeout.json", 'w', encoding='utf-8') as output_file:
+        json.dump(output_data, output_file, indent=2, ensure_ascii=False)
+    
+    print(f"Successfully converted {len(result)} entries from watchmarker.database to watchmarker_takeout.json")
 
